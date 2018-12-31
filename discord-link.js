@@ -4,16 +4,13 @@
 * For more info, visit https://discordapp.com/developers/applications/
 */
 var clientAppID = process.argv[2];
-console.log(typeof(clientAppID));
 
 //If clientAppID was not set, present an error, then exit
-if (typeof(clientAppID) === undefined){
+if (typeof(clientAppID) === typeof(undefined)){
     console.log("Error: No Client/Application ID was set.");
-    process.exit();
-}
-console.log("This hsouldn't apsoeifrjwe");
-/*
-//Converts the clientAppID into a string, if necessary
+    process.exit(126); //Command cannot execute
+} 
+
 if (typeof(clientAppID) === 'number'){
     clientAppID = clientAppID.toString();
 }
@@ -25,4 +22,3 @@ client.updatePresence({
     largeImageKey: 'smashultimate',
     largeImageText: '大乱闘スマッシュブラザーズ SPECIAL',
 });
-*/
