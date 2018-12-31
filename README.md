@@ -10,26 +10,27 @@ This app currently supports setting the status for Super Smash Bros. Ultimate wi
 This app currently only works on Windows-based systems due to how Windows handles processes. Linux support will be added after the core features of the app are completed.
 
 ## Installation
-You will need to have `node` installed on your computer before continuing with this guide.<br>
+You will need to have `node` installed on your computer before continuing with this guide.
 
-When you download the files from the repository, these packages are included:<br>
+When you download the files from the repository, these packages are included:
 * `bootstrap: 4.0`
 * `jquery: 3.2.1`
 * `fontawesome: 5.0`
 
 You will need to separately install the following packages by typing `npm install` into a terminal:
-* `electron`
-* `discord.js`
-* `discord-rpc`
-* `discord-rich-presence`
+* [`electron`](https://www.npmjs.com/package/electron)
+* [`discord.js`](https://www.npmjs.com/package/discord.js)
+* [`discord-rpc`](https://www.npmjs.com/package/discord-rpc)
+* [`discord-rich-presence`](https://www.npmjs.com/package/discord-rich-presence)
 
-Note: When installing `discord.js` and `discord-rpc`, you may receive `WARN` messages from npm asking you to install several peer dependencies. This application doesn't make use of those dependencies, and doesn't need to be installed.
+Note: When installing `discord.js` and `discord-rpc`, you may receive `WARN` messages from npm asking you to install several peer dependencies. These [dependencies](https://www.npmjs.com/package/discord.js#optional-packages) are for WebSockets and the voice support, which this application doesn't use. You can safely ignore them.
 
 ## Running the Application
-If you have npm installed, type `npm start` in a terminal to start the program.
+If you have npm installed, type `npm start` into a terminal to start the program.
 
 ## Tested Configuration
-At the time of writing, I have developed and this program with the following configurations:
+At the time of writing, this application used the following configurations:
+* `Node.js v11.2.0`
 * `electron: 4.0.0`
 * `discord.js: 11.4.2`
 * `discord-rpc: 3.0.1`
