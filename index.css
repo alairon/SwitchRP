@@ -1,11 +1,14 @@
 .header, .gameSelect, .control {
     margin: 2% 5% 2% 5%;
-    text-align: 2% 5% 2% 5%;
+    text-align: center;
+    align-content: center;
 }
 
 .footer {
     background: #ebe2e2;
     position: fixed;
+    align-content: center;
+    text-align: center;
     left: 0;
     right: 0;
     bottom: 2%;

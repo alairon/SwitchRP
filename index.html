@@ -20,6 +20,8 @@
             <h1>Discord Status Configuration</h1>
         </div>
 
+        <hr>
+
         <!-- Select your game -->
         <div class="gameSelect">
             <button class="btn btn-primary dropdown-toggle" type="button" id="titleName" data-toggle="dropdown" arias-haspopup="true" aria-expanded="false">
@@ -35,7 +37,7 @@
             </div>
         </div>
 
-    <!-- Application ID. Allows users to enter a game ID from Discord. Will be removed.
+    <!-- Application ID. Allows users to enter a game ID from Discord. Will be added in later.
         <div class="form-group">
             <label for="selectedGameID">Application ID</label>
             <input class="form-control" id="gameID" placeholder="Enter the application ID of your game.">
@@ -44,7 +46,7 @@
 
         <!-- Control buttons  -->
         <div class="control">
-            <button type="button" id="reset-btn" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false" onclick="resetValues()">
+            <button type="button" id="reset-btn" class="btn btn-outline-dark" data-toggle="button" aria-pressed="false" onclick="resetValues()">
                 <i class="fas fa-undo-alt"></i>&nbsp;&nbsp;Reset Values
             </button>
             <button type="button" id="updateStatus" class="btn btn-success" data-toggle="false" aria-pressed="false">
@@ -52,6 +54,7 @@
             </button>
         </div>
 
+    <!-- Footer: Disclaimer
         <footer class="footer">
             <div class="container">
                 <span class="text-muted">
@@ -59,11 +62,11 @@
                 </span>
             </div>
         </footer>
+    -->
 
         <!-- JavaScript files used by the application -->
         <script src="jquery/jquery-3.2.1.slim.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
         <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="index.js"></script>
-        <script src="discord-link.js"></script>
+        <script src="./index.js"></script>
     </body>
 </html>
