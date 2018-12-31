@@ -6,6 +6,7 @@ updateStatus.addEventListener('click',  () => {
     ipcRenderer.send('updateStat', '525817582431764495');
 });
 
+/* Unused IPC commands -- may be used in the future
 const disconnectGame = document.getElementById('disconnectGame');
 disconnectGame.addEventListener('click', () => {
     ipcRenderer.send('disconnectGame', 'Successfully disconnected');
@@ -14,6 +15,7 @@ disconnectGame.addEventListener('click', () => {
 ipcRenderer.on('update-result', function(event, arg) {
     console.log("Discord clientID: " + arg);
 });
+*/
 
 /* Sets the text of the dropdown menu to what the user selected */
 function setTitle(title){
