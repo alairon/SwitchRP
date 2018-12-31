@@ -1,0 +1,23 @@
+{
+    "lastPlayed":
+    {
+        "fullName":"Super Smash Bros. Ultimate",
+        "shortName":"ssbu"
+    },
+    "Super Smash Bros. Ultimate":
+    {
+        "fullName":"Super Smash Bros. Ultimate",
+        "shortName":"ssbu",
+        "clientAppID":"525817582431764495",
+        "largeImageKey":"smashultimate",
+        "largeImageText":"大乱闘スマッシュブラザーズ SPECIAL"
+    },
+    "Splatoon 2":
+    {
+        "fullName":"Splatoon 2",
+        "shortName":"splatoon2",
+        "clientAppID":"525905802041491476",
+        "largeImageKey":"splatoon2",
+        "largeImageText":"Splatoon 2"
+    }
+}
