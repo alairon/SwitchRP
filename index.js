@@ -33,5 +33,5 @@ function setTitle(title) {
 
 // Restores the initial values on the form
 function resetValues() {
-  document.getElementById('titleName').innerHTML = 'Choose your title';
+  document.getElementById('titleName').innerHTML = '<i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game';
 }
