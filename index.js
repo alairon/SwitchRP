@@ -15,17 +15,6 @@ updateStatus.addEventListener('click', () => {
   ipcRenderer.send('updateStat', document.getElementById('titleName').value);
 });
 
-/* Unused IPC commands -- may be used in the future
-const disconnectGame = document.getElementById('disconnectGame');
-disconnectGame.addEventListener('click', () => {
-    ipcRenderer.send('disconnectGame', 'Successfully disconnected');
-});
-
-ipcRenderer.on('update-result', function(event, arg) {
-    console.log("Discord clientID: " + arg);
-});
-*/
-
 function getclientAppID(title) {
   let clientAppID;
 
