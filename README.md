@@ -5,7 +5,7 @@ SwitchRP is an electron application for Nintendo Switch users on Discord that al
 
 ## Current Limitations
 ### Application 
-This app currently supports setting the status for Super Smash Bros. Ultimate without the ability to customize your status.
+This app currently supports setting the status for Super Smash Bros. Ultimate and Splatoon 2 without the ability to customize your status.
 ### Operating System
 This app currently only works on Windows-based systems due to how Windows handles processes. Linux support will be added after the core features of the app are completed.
 
