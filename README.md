@@ -5,9 +5,7 @@ SwitchRP is an electron application for Nintendo Switch users on Discord that al
 
 ## Current Limitations
 ### Application 
-This app currently supports setting the status for Super Smash Bros. Ultimate and Splatoon 2 without the ability to customize your status.
-### Operating System
-This app currently only works on Windows-based systems due to how Windows handles processes. Linux support will be added after the core features of the app are completed.
+This app currently supports setting the status for Super Smash Bros. Ultimate without the ability to customize your status.
 
 ## Installation
 You will need to have `node` installed on your computer before continuing with this guide.
@@ -17,7 +15,7 @@ When you download the files from the repository, these packages are included:
 * `jquery: 3.2.1`
 * `fontawesome: 5.0`
 
-You will need to separately install the following packages by typing `npm install` into a terminal:
+You will need to install the following dependencies by typing `npm install` into a terminal:
 * [`electron`](https://www.npmjs.com/package/electron)
 * [`discord.js`](https://www.npmjs.com/package/discord.js)
 * [`discord-rpc`](https://www.npmjs.com/package/discord-rpc)
