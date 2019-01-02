@@ -59,27 +59,34 @@ process.on('unhandledRejection', (reason) => {
 
 /* IPC -- Update Function */
 let winLauncher = null;
-function mainW(clientAppID) {
+function statusWindow(clientAppID) {
   winLauncher = new BrowserWindow({
     width: 800,
     height: 250,
     resizable: false,
   });
+
+  // Shift control of windows
   mainWindow.minimize();
   mainWindow.hide();
   winLauncher.loadFile('gameConfig-temp.html');
 
-  const pidVal = exec.spawn('node', ['discord-link.js', clientAppID]);
+  const pidVal = exec.spawn('node', ['discordConnect.js', clientAppID]);
 
   // Hide the menu bar
   winLauncher.setMenu(null);
 
   winLauncher.on('closed', () => {
     winLauncher = null;
-    const cmd = `taskkill /pid  ${pidVal.pid} /t /f`;
+
     if (process.platform === 'win32') {
+      const cmd = `taskkill /pid  ${pidVal.pid} /t /f`;
       exec.exec(cmd);
+    } else {
+      pidVal.kill('SIGINT');
     }
+
+    // Restore control to the main interface
     mainWindow.show();
     mainWindow.restore();
   });
@@ -87,6 +94,6 @@ function mainW(clientAppID) {
 
 ipcMain.on('updateStat', (event, clientAppID) => {
   if (winLauncher === null) {
-    mainW(clientAppID);
+    statusWindow(clientAppID);
   }
 });
