@@ -8,13 +8,16 @@
 // IPC
 const { ipcRenderer } = require('electron');
 
+// JSON containing game titles
 const titles = require('./titles.json');
 
+// Add functionality to the 'Update Status' button
 const updateStatus = document.getElementById('updateStatus');
 updateStatus.addEventListener('click', () => {
   ipcRenderer.send('updateStat', document.getElementById('titleName').value);
 });
 
+/* Gets a clientAppID based on the game's title*/
 function getclientAppID(title) {
   let clientAppID;
 
