@@ -2,8 +2,6 @@
 * https://discordapp.com/developers/applications/
 */
 
-const { ipcRenderer } = require('electron');
-
 // Holds an appID
 let clientAppID = process.argv[2];
 
