@@ -16,7 +16,6 @@ When you download the files from the repository, these packages are included:
 * `fontawesome: 5.0`
 
 You will need to install the following dependencies by typing `npm install` into a terminal:
-* [`electron`](https://www.npmjs.com/package/electron)
 * [`discord.js`](https://www.npmjs.com/package/discord.js)
 * [`discord-rpc`](https://www.npmjs.com/package/discord-rpc)
 * [`discord-rich-presence`](https://www.npmjs.com/package/discord-rich-presence)
@@ -29,6 +28,7 @@ If you have npm installed, type `npm start` into a terminal to start the program
 ## Tested Configuration
 At the time of writing, this application used the following configurations:
 * `Node.js v11.2.0`
+* `npm v6.4.1`
 * `electron: 4.0.0`
 * `discord.js: 11.4.2`
 * `discord-rpc: 3.0.1`
