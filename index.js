@@ -9,7 +9,7 @@
 const { ipcRenderer } = require('electron');
 
 // JSON containing game titles
-const titles = require('./titles.json');
+const gameList = require('./titles.json');
 
 // Add functionality to the 'Update Status' button
 const updateStatus = document.getElementById('updateStatus');
@@ -23,10 +23,10 @@ function getclientAppID(title) {
 
   switch(title) {
     case 'Super Smash Bros. Ultimate':
-      clientAppID = titles.SmashUltimate.clientAppID;
+      clientAppID = gameList.SmashUltimate.clientAppID;
       break;
     case 'Splatoon 2':
-      clientAppID = titles.Splatoon2.clientAppID;
+      clientAppID = gameList.Splatoon2.clientAppID;
       break;
     default:
       clientAppID = 0;
@@ -38,12 +38,15 @@ function getclientAppID(title) {
 // Sets the text of the dropdown menu to what the user selected
 function setTitle(title) {
   const titleName = document.getElementById('titleName');
-  titleName.innerHTML = title;
-  titleName.value = getclientAppID(title); //clientAppID
+  document.getElementById('gameName').value = title;
+  document.getElementById('gameID').value = getclientAppID(title);
+  titleName.innerHTML = '<i class="fas fa-check"></i>&nbsp;&nbsp;Game selected';
 }
 
 // Restores the initial values on the form
 function resetValues() {
   document.getElementById('titleName').innerHTML = '<i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game';
-  document.getElementById('titleName').value = 0;
+  document.getElementById('gameName').value = "";
+  document.getElementById('gameID').value = "";
+  document.getElementById('gameDetails').value = "";
 }
