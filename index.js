@@ -17,9 +17,6 @@ updateStatus.addEventListener('click', () => {
   ipcRenderer.send('updateStat', document.getElementById('titleName').value);
 });
 
-// Tooltips
-$('#customGame').tooltip(options);
-
 /* Gets a clientAppID based on the game's title*/
 function getclientAppID(title) {
   let clientAppID;
