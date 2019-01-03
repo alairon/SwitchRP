@@ -63,6 +63,7 @@ function setTitle(title) {
   const titleName = document.getElementById('titleName');
   document.getElementById('gameName').value = title;
   document.getElementById('gameID').value = getclientAppID(title);
+  titleName.value = getclientAppID(title); //Value
   titleName.innerHTML = '<i class="fas fa-check"></i>&nbsp;&nbsp;Game selected';
 }
 
