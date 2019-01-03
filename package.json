@@ -1,7 +1,7 @@
 {
   "name": "switchrp",
   "productName": "Switch RP",
-  "version": "0.3.0-0",
+  "version": "0.3.0",
   "description": "An electron application for Nintendo Switch users that allows them to update their game status via Discord Rich Presence.",
   "main": "main.js",
   "scripts": {
