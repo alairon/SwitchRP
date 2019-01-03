@@ -17,6 +17,9 @@ updateStatus.addEventListener('click', () => {
   ipcRenderer.send('updateStat', document.getElementById('titleName').value);
 });
 
+// Tooltips
+$('#customGame').tooltip(options);
+
 /* Gets a clientAppID based on the game's title*/
 function getclientAppID(title) {
   let clientAppID;
@@ -33,6 +36,29 @@ function getclientAppID(title) {
   }
 
   return clientAppID;
+}
+
+function toggleScheme() {
+  let core = document.getElementById('bodyMain');
+  let color = document.getElementById('lightToggle');
+  let button = document.getElementById('reset-btn');
+  switch (color.value){
+    case '0':
+      color.value = '1';
+      color.innerHTML = '<i class="fas fa-lightbulb"></i>';
+      core.classList.add('body-dark');
+      core.classList.remove('body-light');
+      button.classList.add('btn-outline-light');
+      button.classList.remove('btn-outline-dark');
+      break;
+    default:
+      color.value = '0';
+      color.innerHTML = '<i class="far fa-lightbulb"></i>';
+      core.classList.add('body-light');
+      core.classList.remove('body-dark');
+      button.classList.add('btn-outline-dark');
+      button.classList.remove('btn-outline-light');
+  }
 }
 
 // Sets the text of the dropdown menu to what the user selected

@@ -15,17 +15,18 @@
     <link rel="stylesheet" href="fontawesome/css/regular.min.css">
     <link rel="stylesheet" href="fontawesome/css/brands.min.css">
   </head>
-  <body>
+  <body id="bodyMain" class="body-light">
     <div class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header justify-content-between">
           <span class="navbar-brand">Switch RP</span>
           <span class="navbar-text">v0.3.0-alpha</span>
           
-          <!-- Buttons
-          <button class="btn btn-info" type="button"><i class="far fa-plus-square"></i></button>
-          <button class="btn btn-info" type="button"><i class="far fa-question-circle"></i></button>
-          -->
+        </div>
+        <div class="navbar-header">
+          <button class="btn btn-light" type="button" id="lightToggle" value=0 onclick="toggleScheme()"><i class="far fa-lightbulb"></i></button>
+          <button class="btn btn-light" type="button" id="customGame" data-toggle="tooltip" data-placement="bottom" title="Custom entries will be implemented later" disabled><i class="fas fa-file-import"></i></button>
+          <button class="btn btn-info" type="button" onclick="alert('Select a one title from the dropdown menu, then click on the Update Status button')"><i class="far fa-question-circle"></i></button>
         </div>
       </div>
     </div>
@@ -41,10 +42,6 @@
         </button>
         <button class="dropdown-item" type="button" onclick="setTitle('Splatoon 2')">
           Splatoon 2
-        </button>
-        <div class="dropdown-divider"></div>
-        <button class="dropdown-item" type="button" onclick="alert('Select a one title from the dropdown menu, then click on the Update Status button')">
-          <i class="far fa-question-circle" alt="Question mark in a circle"></i>&nbsp;Help
         </button>
       </div>
     </div>
@@ -73,7 +70,7 @@
 
     <!-- Control buttons  -->
     <div class="control">
-      <button type="button" id="reset-btn" class="btn btn-outline-dark" aria-pressed="false" onclick="resetValues()">
+      <button type="button" id="reset-btn" class="btn btn-outline-dark" onclick="resetValues()">
         <i class="fas fa-undo-alt"></i>&nbsp;&nbsp;Reset Values
       </button>
       <button type="button" id="updateStatus" class="btn btn-success" data-toggle="false" aria-pressed="false">
