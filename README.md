@@ -11,9 +11,9 @@ This app currently supports setting the status for Super Smash Bros. Ultimate wi
 You will need to have `node` installed on your computer before continuing with this guide.
 
 When you download the files from the repository, these packages are included:
-* `bootstrap: 4.0`
+* `bootstrap: 4.2`
 * `jquery: 3.2.1`
-* `fontawesome: 5.0`
+* `fontawesome: 5.6`
 
 You will need to install the following dependencies by typing `npm install` into a terminal:
 * [`discord.js`](https://www.npmjs.com/package/discord.js)

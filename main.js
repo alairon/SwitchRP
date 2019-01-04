@@ -36,7 +36,16 @@ function createLauncherWindow() {
 }
 
 /* Electron Application */
-app.on('ready', createLauncherWindow);
+app.on('ready', () => {
+  /* Start the application if it's the only instance */
+  const singleInstance = app.requestSingleInstanceLock();
+
+  if (!singleInstance) {
+    app.quit();
+  } else {
+    createLauncherWindow();
+  }
+});
 
 app.on('window-all-closed', () => {
   // Process is different with Darwin (Mac OS/OS X)
