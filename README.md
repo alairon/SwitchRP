@@ -20,7 +20,7 @@ You will need to install the following dependencies by typing `npm install` into
 * [`discord-rpc`](https://www.npmjs.com/package/discord-rpc)
 * [`discord-rich-presence`](https://www.npmjs.com/package/discord-rich-presence)
 
-Note: When installing `discord.js` and `discord-rpc`, you may receive `WARN` messages from npm asking you to install several peer dependencies. These [dependencies](https://www.npmjs.com/package/discord.js#optional-packages) are for WebSockets and the voice support, which this application doesn't use. You can safely ignore them.
+Note: When installing `discord.js` and `discord-rpc`, you may receive `WARN` messages from npm asking you to install several peer dependencies. These [dependencies](https://www.npmjs.com/package/discord.js#optional-packages) are for WebSockets and voice support, which this application doesn't use. You can safely ignore them.
 
 ## Running the Application
 If you have npm installed, type `npm start` into a terminal to start the program.
