@@ -27,3 +27,9 @@ function updatePresence(appPresence) {
 
 const appPresence = JSON.parse('{"largeImageKey":"smashultimate"}');
 updatePresence(appPresence);
+
+/* Process Functions */
+// Uncaught Rejection, in case of Discord Timeouts
+process.on('unhandledRejection', (reason) => {
+  console.log(reason.stack || reason);
+});

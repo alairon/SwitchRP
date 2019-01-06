@@ -65,12 +65,6 @@ app.on('activate', () => {
   }
 });
 
-/* Process Functions */
-// Uncaught Rejection, in case of Discord Timeouts
-process.on('unhandledRejection', (reason) => {
-  console.log(reason.stack || reason);
-});
-
 /* IPC -- Update Function */
 let winLauncher = null;
 function statusWindow(clientAppID) {
