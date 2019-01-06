@@ -6,6 +6,14 @@
     color: #05fcc8 !important;
 }
 
+.noticeBoard {
+    padding: 1% 1% 1% 1%;
+    background: #e0ff66;
+    color: #000000;
+    text-align: center;
+    align-content: center;
+}
+
 .header, .gameSelect, .presenceInfo, .control {
     margin: 2% 5% 2% 5%;
     text-align: center;

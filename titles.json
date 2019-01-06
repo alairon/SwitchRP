@@ -1,20 +1,23 @@
 {
-    "SmashUltimate":
-    {
-        "id":1,
-        "longName":"Super Smash Bros. Ultimate",
-        "shortName":"ssbu",
-        "clientAppID":"525817582431764495",
-        "largeImageKey":"smashultimate",
-        "largeImageText":"大乱闘スマッシュブラザーズ SPECIAL"
-    },
-    "Splatoon2":
-    {
-        "id":2,
-        "longName":"Splatoon 2",
-        "shortName":"splatoon2",
-        "clientAppID":"525905802041491476",
-        "largeImageKey":"splatoon2",
-        "largeImageText":"Splatoon 2"
-    }
+  "SmashBrosUltimate":
+  {
+    "id":0,
+    "longName":"Super Smash Bros. Ultimate",
+    "clientAppID":"525817582431764495",
+    "largeImageKey":"smashultimate"
+  },
+  "Splatoon2":
+  {
+    "id":1,
+    "longName":"Splatoon 2",
+    "clientAppID":"525905802041491476",
+    "largeImageKey":"splatoon2"
+  },
+  "MarioKart8Deluxe":
+  {
+    "id":2,
+    "longName":"Mario Kart 8 Deluxe",
+    "clientAppID":"531249139040780298",
+    "largeImageKey":"mk8dx"
+  }
 }

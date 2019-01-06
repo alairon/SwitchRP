@@ -1,3 +1,8 @@
+/** main.js
+ * Functions used by the "server"
+ * Utilizes Node.js
+ */
+
 /* Electron */
 const { app, BrowserWindow } = require('electron');
 
