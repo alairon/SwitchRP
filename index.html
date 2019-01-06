@@ -20,12 +20,18 @@
       <div class="container-fluid">
         <div class="navbar-header justify-content-between">
           <span class="navbar-brand">Switch RP</span>
-          <span class="navbar-text">v0.3.1</span>
+          <span class="navbar-text">v0.4.0</span>
         </div>
         <div class="navbar-header">
-          <button class="btn btn-light" type="button" id="lightToggle" value=0 onclick="toggleScheme()"><i class="far fa-lightbulb"></i></button>
+          <button class="btn btn-light" type="button" id="lightToggle" value="0" onclick="toggleScheme()"><i class="far fa-lightbulb"></i></button>
+          <button class="btn btn-warning" type="button" id="noticesButton" value="0" onclick="readMail()"><i class="fas fa-envelope"></i></button>
           <button class="btn btn-info" type="button" onclick="alert('Select a one title from the dropdown menu, then click on the Update Status button')"><i class="far fa-question-circle"></i></button>
         </div>
+      </div>
+    </div>
+    <div id="notices" class="noticeBoard" style="display:none">
+      <div class="container-fluid">
+        <span>This is an early development build. Descriptions and custom entries are currently disabled.</span>
       </div>
     </div>
 
@@ -53,8 +59,8 @@
         </div>
         <div class="form-group">
           <div class="col">
-            <label for="gameDetails">Game Details</label>
-            <input type="text" class="form-control" id="gameDetails" placeholder="Describe what you're doing in-game (optional)">
+            <label for="gameDetails">Game Details (Work in Progress)</label>
+            <input type="text" class="form-control" id="gameDetails" placeholder="Describe what you're doing in-game (optional)" disabled>
           </div>
         </div>
       </form>

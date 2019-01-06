@@ -1,28 +1,21 @@
 {
   "SmashBrosUltimate":
   {
-    "id":1,
+    "id":0,
     "longName":"Super Smash Bros. Ultimate",
     "clientAppID":"525817582431764495",
     "largeImageKey":"smashultimate"
   },
   "Splatoon2":
   {
-    "id":2,
+    "id":1,
     "longName":"Splatoon 2",
     "clientAppID":"525905802041491476",
     "largeImageKey":"splatoon2"
   },
-  "ARMS":
-  {
-    "id":0,
-    "longName":"ARMS",
-    "clientAppID":"0",
-    "largeImageKey":"arms"
-  },
   "MarioKart8Deluxe":
   {
-    "id":3,
+    "id":2,
     "longName":"Mario Kart 8 Deluxe",
     "clientAppID":"531249139040780298",
     "largeImageKey":"mk8dx"

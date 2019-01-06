@@ -58,6 +58,33 @@ function toggleScheme() {
   }
 }
 
+function readMail(){
+  const mail = document.getElementById('noticesButton');
+  const notice = document.getElementById('notices');
+
+  switch (mail.value) {
+    //Open unread message
+    case('0'):
+      mail.value = '1';
+      mail.classList.add('btn-light');
+      mail.classList.remove('btn-warning');
+      mail.innerHTML = '<i class="fas fa-envelope-open-text"></i>';
+      notice.setAttribute ('style', 'display:block');
+      break;
+    //Close read message
+    case('1'):
+      mail.value = '2';
+      mail.innerHTML = '<i class="fas fa-envelope"></i>';
+      notice.setAttribute ('style', 'display:none');
+      break;
+    //Open read message
+    default:
+      mail.value = '1';
+      mail.innerHTML = '<i class="fas fa-envelope-open-text"></i>';
+      notice.setAttribute ('style', 'display:block');
+  }
+}
+
 // Sets the text of the dropdown menu to what the user selected
 function setTitle(id) {
   const titleName = document.getElementById('titleName');
