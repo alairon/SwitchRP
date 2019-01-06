@@ -34,13 +34,7 @@
       <button class="btn btn-primary dropdown-toggle" type="button" id="titleName" value="0" data-toggle="dropdown" arias-haspopup="true" aria-expanded="false">
           <i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game
       </button>
-      <div class="dropdown-menu">
-        <button class="dropdown-item" type="button" onclick="setTitle('Super Smash Bros. Ultimate')">
-          Super Smash Bros. Ultimate
-        </button>
-        <button class="dropdown-item" type="button" onclick="setTitle('Splatoon 2')">
-          Splatoon 2
-        </button>
+      <div class="dropdown-menu" id="gameList">
       </div>
     </div>
 
@@ -60,7 +54,7 @@
         <div class="form-group">
           <div class="col">
             <label for="gameDetails">Game Details</label>
-            <input type="text" class="form-control" id="gameDetails" placeholder="Game Details (Rec. 26 char max)">
+            <input type="text" class="form-control" id="gameDetails" placeholder="Describe what you're doing in-game (optional)">
           </div>
         </div>
       </form>

@@ -5,50 +5,50 @@
 
 /* eslint-disable */
 
-// IPC
+/* IPC */
 const { ipcRenderer } = require('electron');
 
-// JSON containing game titles
+/* JSON containing game titles */
 const gameList = require('./titles.json');
 
-// Add functionality to the 'Update Status' button
+/* Add functionality to the 'Update Status' button */
 const updateStatus = document.getElementById('updateStatus');
 updateStatus.addEventListener('click', () => {
   ipcRenderer.send('updateStat', document.getElementById('titleName').value);
 });
 
-/* Gets a clientAppID based on the game's title*/
-function getclientAppID(title) {
-  let clientAppID;
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownDiv = document.createDocumentFragment();
 
-  switch(title) {
-    case 'Super Smash Bros. Ultimate':
-      clientAppID = gameList.SmashUltimate.clientAppID;
-      break;
-    case 'Splatoon 2':
-      clientAppID = gameList.Splatoon2.clientAppID;
-      break;
-    default:
-      clientAppID = 0;
+  for (let x = 0; x < Object.keys(gameList).length; x++) {
+    const gameItem = document.createElement('button');
+    const listObj = Object.values(gameList)[x];
+
+    gameItem.setAttribute('class', 'dropdown-item');
+    gameItem.setAttribute('type', 'button');
+    gameItem.setAttribute('onclick', `setTitle("${listObj.id}")`);
+    gameItem.setAttribute('value', listObj.id);
+    gameItem.innerHTML = listObj.longName;
+    dropdownDiv.appendChild(gameItem);
   }
 
-  return clientAppID;
-}
+  document.getElementById('gameList').appendChild(dropdownDiv);
+});
 
+/* Toggles between light and dark themes */
 function toggleScheme() {
-  let core = document.getElementById('bodyMain');
-  let color = document.getElementById('lightToggle');
-  let button = document.getElementById('reset-btn');
-  switch (color.value){
-    case '0':
+  const core = document.getElementById('bodyMain');
+  const color = document.getElementById('lightToggle');
+  const button = document.getElementById('reset-btn');
+
+  if (color.value == '0') {
       color.value = '1';
       color.innerHTML = '<i class="fas fa-lightbulb"></i>';
       core.classList.add('body-dark');
       core.classList.remove('body-light');
       button.classList.add('btn-outline-light');
       button.classList.remove('btn-outline-dark');
-      break;
-    default:
+  } else {
       color.value = '0';
       color.innerHTML = '<i class="far fa-lightbulb"></i>';
       core.classList.add('body-light');
@@ -59,18 +59,19 @@ function toggleScheme() {
 }
 
 // Sets the text of the dropdown menu to what the user selected
-function setTitle(title) {
+function setTitle(id) {
   const titleName = document.getElementById('titleName');
-  document.getElementById('gameName').value = title;
-  document.getElementById('gameID').value = getclientAppID(title);
-  titleName.value = getclientAppID(title); //Value
+  const listObj = Object.values(gameList)[id];
+  document.getElementById('gameName').value = listObj.longName;
+  document.getElementById('gameID').value = listObj.clientAppID;
+  titleName.value = listObj.clientAppID;
   titleName.innerHTML = '<i class="fas fa-check"></i>&nbsp;&nbsp;Game selected';
 }
 
 // Restores the initial values on the form
 function resetValues() {
   document.getElementById('titleName').innerHTML = '<i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game';
-  document.getElementById('gameName').value = "";
-  document.getElementById('gameID').value = "";
-  document.getElementById('gameDetails').value = "";
+  document.getElementById('gameName').value = '';
+  document.getElementById('gameID').value = '';
+  document.getElementById('gameDetails').value = '';
 }

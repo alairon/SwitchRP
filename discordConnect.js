@@ -25,5 +25,5 @@ function updatePresence(appPresence) {
   });
 }
 
-const appPresence = JSON.parse('{"details":"Smash (Online)","largeImageKey":"smashultimate"}');
+const appPresence = JSON.parse('{"largeImageKey":"smashultimate"}');
 updatePresence(appPresence);
