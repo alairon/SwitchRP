@@ -4,10 +4,7 @@
  */
 
 /* Electron */
-const { app, BrowserWindow } = require('electron');
-
-/* IPC */
-const { ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 /* Child Processes */
 const exec = require('child_process');
