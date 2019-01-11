@@ -2,34 +2,40 @@
 * https://discordapp.com/developers/applications/
 */
 
-// Holds an appID
-let clientAppID = process.argv[2];
+function adjustAppID(appID) {
+  let clientAppID = appID;
+  // Convert a raw number into a string, if necessary
+  if (typeof (clientAppID) === 'number') {
+    clientAppID = clientAppID.toString();
+  }
 
-// If clientAppID was not set exit
-if (typeof (clientAppID) === typeof (undefined)) {
-  process.exit(126);
+  return (clientAppID);
 }
 
-// Convert a raw number into a string, if necessary
-if (typeof (clientAppID) === 'number') {
-  clientAppID = clientAppID.toString();
-}
+/* eslint-disable */
+// An object that holds clientAppID, details, and largeImageKey
+const appPresence = {
+  'clientAppID': adjustAppID(process.argv[2]),
+  'details': process.argv[3],
+  'largeImageKey': process.argv[4]
+};
+/* eslint-enable */
 
 // Configures the user status with information passed in from the user
-const client = require('discord-rich-presence')(clientAppID);
+const client = require('discord-rich-presence')(appPresence.clientAppID);
 
-function updatePresence(appPresence) {
+function updatePresence() {
   client.updatePresence({
     details: appPresence.details,
     largeImageKey: appPresence.largeImageKey,
   });
 }
 
-const appPresence = JSON.parse('{"largeImageKey":"smashultimate"}');
-updatePresence(appPresence);
+updatePresence();
 
 /* Process Functions */
 // Uncaught Rejection, in case of Discord Timeouts
 process.on('unhandledRejection', (reason) => {
+  console.log(appPresence);
   console.log(reason.stack || reason);
 });

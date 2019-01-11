@@ -64,7 +64,7 @@ app.on('activate', () => {
 
 /* IPC -- Update Function */
 let winLauncher = null;
-function statusWindow(clientAppID) {
+function statusWindow(clientAppID, details, largeImageKey) {
   winLauncher = new BrowserWindow({
     width: 800,
     height: 250,
@@ -74,9 +74,9 @@ function statusWindow(clientAppID) {
   // Shift control of windows
   mainWindow.minimize();
   mainWindow.hide();
-  winLauncher.loadFile('gameConfig-temp.html');
+  winLauncher.loadFile('gameConfig.html');
 
-  const pidVal = exec.spawn('node', ['discordConnect.js', clientAppID]);
+  const pidVal = exec.fork('discordConnect.js', [clientAppID, details, largeImageKey]);
 
   // Hide the menu bar
   winLauncher.setMenu(null);
@@ -97,8 +97,8 @@ function statusWindow(clientAppID) {
   });
 }
 
-ipcMain.on('updateStat', (event, clientAppID) => {
+ipcMain.on('updateStat', (event, clientAppID, details, largeImageKey) => {
   if (winLauncher === null) {
-    statusWindow(clientAppID);
+    statusWindow(clientAppID, details, largeImageKey);
   }
 });
