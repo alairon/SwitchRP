@@ -4,10 +4,7 @@
  */
 
 /* Electron */
-const { app, BrowserWindow } = require('electron');
-
-/* IPC */
-const { ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 /* Child Processes */
 const exec = require('child_process');
@@ -65,15 +62,9 @@ app.on('activate', () => {
   }
 });
 
-/* Process Functions */
-// Uncaught Rejection, in case of Discord Timeouts
-process.on('unhandledRejection', (reason) => {
-  console.log(reason.stack || reason);
-});
-
 /* IPC -- Update Function */
 let winLauncher = null;
-function statusWindow(clientAppID) {
+function statusWindow(clientAppID, details, largeImageKey) {
   winLauncher = new BrowserWindow({
     width: 800,
     height: 250,
@@ -83,9 +74,9 @@ function statusWindow(clientAppID) {
   // Shift control of windows
   mainWindow.minimize();
   mainWindow.hide();
-  winLauncher.loadFile('gameConfig-temp.html');
+  winLauncher.loadFile('gameConfig.html');
 
-  const pidVal = exec.spawn('node', ['discordConnect.js', clientAppID]);
+  const discordProcess = exec.fork('discordConnect.js', [clientAppID, details, largeImageKey]);
 
   // Hide the menu bar
   winLauncher.setMenu(null);
@@ -94,10 +85,10 @@ function statusWindow(clientAppID) {
     winLauncher = null;
 
     if (process.platform === 'win32') {
-      const cmd = `taskkill /pid  ${pidVal.pid} /t /f`;
+      const cmd = `taskkill /pid  ${discordProcess.pid} /t /f`;
       exec.exec(cmd);
     } else {
-      pidVal.kill('SIGINT');
+      discordProcess.kill('SIGINT');
     }
 
     // Restore control to the main interface
@@ -106,8 +97,8 @@ function statusWindow(clientAppID) {
   });
 }
 
-ipcMain.on('updateStat', (event, clientAppID) => {
+ipcMain.on('updateStat', (event, clientAppID, details, largeImageKey) => {
   if (winLauncher === null) {
-    statusWindow(clientAppID);
+    statusWindow(clientAppID, details, largeImageKey);
   }
 });
