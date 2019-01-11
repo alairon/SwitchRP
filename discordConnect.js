@@ -4,19 +4,26 @@
  * https://discordapp.com/developers/applications/
 */
 
-function adjustAppID(appID) {
+// Converts a number type into a string, if necessary
+function checkAppID(appID) {
   let clientAppID = appID;
-  // Convert a raw number into a string, if necessary
   if (typeof (clientAppID) === 'number') {
     clientAppID = clientAppID.toString();
   }
-
   return (clientAppID);
+}
+
+// Checks if the details field was set
+function checkDetails(details) {
+  if (details.length === 0) {
+    return (false);
+  }
+  return (true);
 }
 
 // An object that holds clientAppID, details, and largeImageKey
 const appPresence = {
-  clientAppID: adjustAppID(process.argv[2]),
+  clientAppID: checkAppID(process.argv[2]),
   details: process.argv[3],
   largeImageKey: process.argv[4],
 };
@@ -24,14 +31,23 @@ const appPresence = {
 // Configures the user status with information passed in from the user
 const client = require('discord-rich-presence')(appPresence.clientAppID);
 
-function updatePresence() {
-  client.updatePresence({
-    details: appPresence.details,
-    largeImageKey: appPresence.largeImageKey,
-  });
+function updatePresenceInit() {
+  if (!checkDetails(appPresence.details)) {
+    // No details set
+    client.updatePresence({
+      largeImageKey: appPresence.largeImageKey,
+    });
+  } else {
+    // Details is set
+    client.updatePresence({
+      details: appPresence.details,
+      largeImageKey: appPresence.largeImageKey,
+    });
+  }
 }
 
-updatePresence();
+// Update presence
+updatePresenceInit();
 
 /* Process Functions */
 // Uncaught Rejection, in case of Discord Timeouts
