@@ -76,7 +76,7 @@ function statusWindow(clientAppID, details, largeImageKey) {
   mainWindow.hide();
   winLauncher.loadFile('gameConfig.html');
 
-  const pidVal = exec.fork('discordConnect.js', [clientAppID, details, largeImageKey]);
+  const discordProcess = exec.fork('discordConnect.js', [clientAppID, details, largeImageKey]);
 
   // Hide the menu bar
   winLauncher.setMenu(null);
@@ -85,10 +85,10 @@ function statusWindow(clientAppID, details, largeImageKey) {
     winLauncher = null;
 
     if (process.platform === 'win32') {
-      const cmd = `taskkill /pid  ${pidVal.pid} /t /f`;
+      const cmd = `taskkill /pid  ${discordProcess.pid} /t /f`;
       exec.exec(cmd);
     } else {
-      pidVal.kill('SIGINT');
+      discordProcess.kill('SIGINT');
     }
 
     // Restore control to the main interface
