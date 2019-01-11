@@ -1,5 +1,7 @@
-/** For info on creating application IDs, visit
-* https://discordapp.com/developers/applications/
+/** discordConnect.js
+ * Functions used to update the user's status
+ * For info on creating application IDs, visit
+ * https://discordapp.com/developers/applications/
 */
 
 function adjustAppID(appID) {
@@ -12,14 +14,12 @@ function adjustAppID(appID) {
   return (clientAppID);
 }
 
-/* eslint-disable */
 // An object that holds clientAppID, details, and largeImageKey
 const appPresence = {
-  'clientAppID': adjustAppID(process.argv[2]),
-  'details': process.argv[3],
-  'largeImageKey': process.argv[4]
+  clientAppID: adjustAppID(process.argv[2]),
+  details: process.argv[3],
+  largeImageKey: process.argv[4],
 };
-/* eslint-enable */
 
 // Configures the user status with information passed in from the user
 const client = require('discord-rich-presence')(appPresence.clientAppID);
@@ -36,6 +36,5 @@ updatePresence();
 /* Process Functions */
 // Uncaught Rejection, in case of Discord Timeouts
 process.on('unhandledRejection', (reason) => {
-  console.log(appPresence);
   console.log(reason.stack || reason);
 });
