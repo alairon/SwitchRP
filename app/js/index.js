@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameItem = document.createElement('button');
     const listObj = Object.values(gameList)[x];
 
-    /* Produces a clickable dropdown item:
+    /* Produces a HTML dropdown item via Bootstrap:
     <button class="dropdown-item" type="button" onclick="setTitle ${listObj.id}">
       listObj.longName
     </button>

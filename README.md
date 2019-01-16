@@ -5,15 +5,12 @@ SwitchRP is an electron application for Nintendo Switch users on Discord that al
 
 ## Current Limitations
 ### Application 
-This app currently supports setting the status for Super Smash Bros. Ultimate without the ability to customize your status.
+This app doesn't allow users to create their own entries from within the application. In the meantime, users who have created a custom Discord Application ID may add their entry to the JSON.
+
+A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be displayed immediately after pressing the "Update Status" button.
 
 ## Installation
 You will need to have `node` installed on your computer before continuing with this guide.
-
-When you download the files from the repository, these packages are included:
-* `bootstrap: 4.2`
-* `jquery: 3.2.1`
-* `fontawesome: 5.6`
 
 You will need to install the following dependencies by typing `npm install` into a terminal:
 * [`discord.js`](https://www.npmjs.com/package/discord.js)
@@ -25,11 +22,11 @@ Note: When installing `discord.js` and `discord-rpc`, you may receive `WARN` mes
 ## Running the Application
 If you have npm installed, type `npm start` into a terminal to start the program.
 
-## Tested Configuration
-At the time of writing, this application used the following configurations:
+## Development Configuration
+At the time of writing, this application used the following packages:
 * `Node.js v11.2.0`
 * `npm v6.4.1`
-* `electron: 4.0.0`
+* `electron: 4.0.1`
 * `discord.js: 11.4.2`
 * `discord-rpc: 3.0.1`
 * `discord-rich-presence: 0.0.7`

@@ -3,6 +3,15 @@
  * Utilizes Node.js
  */
 
+/* Application Directories */
+const appDir = './app/';
+const appJSDir = './app/js/';
+
+/* File Directories */
+const indexDir = `${appDir}index.html`;
+const configDir = `${appDir}gameConfig.html`;
+const discordDir = `${appJSDir}discordConnect.js`;
+
 /* Electron */
 const { app, BrowserWindow, ipcMain } = require('electron');
 
@@ -24,7 +33,7 @@ function createLauncherWindow() {
   });
 
   // Load the main page
-  mainWindow.loadFile('./index.html');
+  mainWindow.loadFile(indexDir);
 
   // Hide the menu bar
   mainWindow.setMenu(null);
@@ -63,9 +72,9 @@ app.on('activate', () => {
 });
 
 /* IPC -- Update Function */
-let winLauncher = null;
+let discordWindow = null;
 function statusWindow(clientAppID, details, largeImageKey) {
-  winLauncher = new BrowserWindow({
+  discordWindow = new BrowserWindow({
     width: 800,
     height: 250,
     resizable: false,
@@ -74,16 +83,18 @@ function statusWindow(clientAppID, details, largeImageKey) {
   // Shift control of windows
   mainWindow.minimize();
   mainWindow.hide();
-  winLauncher.loadFile('gameConfig.html');
+  discordWindow.loadFile(configDir);
 
-  const discordProcess = exec.fork('discordConnect.js', [clientAppID, details, largeImageKey]);
+  const discordProcess = exec.fork(discordDir, [clientAppID, details, largeImageKey]);
 
   // Hide the menu bar
-  winLauncher.setMenu(null);
+  discordWindow.setMenu(null);
 
-  winLauncher.on('closed', () => {
-    winLauncher = null;
+  // Restore control to the main window when closed
+  discordWindow.on('closed', () => {
+    discordWindow = null;
 
+    // Destroy the node process that connected to Discord
     if (process.platform === 'win32') {
       const cmd = `taskkill /pid  ${discordProcess.pid} /t /f`;
       exec.exec(cmd);
@@ -98,7 +109,7 @@ function statusWindow(clientAppID, details, largeImageKey) {
 }
 
 ipcMain.on('updateStat', (event, clientAppID, details, largeImageKey) => {
-  if (winLauncher === null) {
+  if (discordWindow === null) {
     statusWindow(clientAppID, details, largeImageKey);
   }
 });
