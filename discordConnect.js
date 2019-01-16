@@ -52,5 +52,10 @@ updatePresenceInit();
 /* Process Functions */
 // Uncaught Rejection, in case of Discord Timeouts
 process.on('unhandledRejection', (reason) => {
-  console.log(reason.stack || reason);
+  console.log('Houston, we have a problem ...');
+  if (typeof (reason.context) !== typeof (undefined)) {
+    console.log(`Error: ${reason.context.code}, ${reason.context.message}`);
+  } else {
+    console.log(reason);
+  }
 });
