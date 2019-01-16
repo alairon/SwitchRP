@@ -19,5 +19,19 @@
     "longName":"Mario Kart 8 Deluxe",
     "clientAppID":"531249139040780298",
     "largeImageKey":"mk8dx"
+  },
+  "XenobladeChronicles2":
+  {
+    "id":3,
+    "longName":"Xenoblade Chronicles 2",
+    "clientAppID":"533492262353633280",
+    "largeImageKey":"xb2"
+  },
+  "FEWarriors":
+  {
+    "id":4,
+    "longName":"Fire Emblem Warriors",
+    "clientAppID":"533489143389487105",
+    "largeImageKey":"fewarriors"
   }
 }
