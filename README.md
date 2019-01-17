@@ -3,8 +3,8 @@
 
 Switch RP (Rich Presence) is an electron application for that allows users to update their game status via Discord's Rich Presence. This application was created because I wanted to share with other Discord users when I was playing on my Switch, but wanted an easier way to update my status apart from going into the settings every time.
 
-![Switch RP main screen](./docs/readme/img/mainScreen.png)
-_Image of the main screen as of v0.5.4_
+![Switch RP main screen](./docs/readme/img/mainScreen.PNG)
+_Image of the main screen as of v0.6.0_
 
 ## Prerequisites
 This application requires the desktop version of Discord. If you don't already have it installed, you can download a fresh copy from [Discord](https://discordapp.com/download).
