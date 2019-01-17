@@ -27,8 +27,8 @@ function createLauncherWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    width: 800,
-    height: 600,
+    width: 720,
+    height: 480,
     resizable: true,
   });
 
@@ -37,9 +37,6 @@ function createLauncherWindow() {
 
   // Hide the menu bar
   mainWindow.setMenu(null);
-
-  // Show the Chrome development tools when launched
-  // mainWindow.toggleDevTools();
 
   mainWindow.on('closed', () => {
     mainWindow = null;
