@@ -1,32 +1,27 @@
 {
-  "SuperSmashBrosUltimate":
-  {
-    "longName":"Super Smash Bros. Ultimate",
-    "clientAppID":"525817582431764495",
-    "largeImageKey":"smashultimate"
+  "SuperSmashBrosUltimate": {
+    "longName": "Super Smash Bros. Ultimate",
+    "clientAppID": "525817582431764495",
+    "largeImageKey": "smashultimate"
   },
-  "Splatoon2":
-  {
-    "longName":"Splatoon 2",
-    "clientAppID":"525905802041491476",
-    "largeImageKey":"splatoon2"
+  "Splatoon2": {
+    "longName": "Splatoon 2",
+    "clientAppID": "525905802041491476",
+    "largeImageKey": "splatoon2"
   },
-  "MarioKart8Deluxe":
-  {
-    "longName":"Mario Kart 8 Deluxe",
-    "clientAppID":"531249139040780298",
-    "largeImageKey":"mk8dx"
+  "MarioKart8Deluxe": {
+    "longName": "Mario Kart 8 Deluxe",
+    "clientAppID": "531249139040780298",
+    "largeImageKey": "mk8dx"
   },
-  "XenobladeChronicles2":
-  {
-    "longName":"Xenoblade Chronicles 2",
-    "clientAppID":"533492262353633280",
-    "largeImageKey":"xb2"
+  "XenobladeChronicles2": {
+    "longName": "Xenoblade Chronicles 2",
+    "clientAppID": "533492262353633280",
+    "largeImageKey": "xb2"
   },
-  "FireEmblemWarriors":
-  {
-    "longName":"Fire Emblem Warriors",
-    "clientAppID":"533489143389487105",
-    "largeImageKey":"fewarriors"
+  "FireEmblemWarriors": {
+    "longName": "Fire Emblem Warriors",
+    "clientAppID": "533489143389487105",
+    "largeImageKey": "fewarriors"
   }
 }
