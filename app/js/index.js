@@ -4,6 +4,7 @@
 */
 
 /* eslint no-unused-vars: 0 */
+/* eslint import/no-unresolved: 0 */
 
 // IPC Renderer
 const { ipcRenderer } = require('electron');
