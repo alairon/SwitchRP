@@ -28,7 +28,7 @@ function createLauncherWindow() {
       nodeIntegration: true,
     },
     width: 720,
-    height: 480,
+    height: 520,
     resizable: true,
   });
 

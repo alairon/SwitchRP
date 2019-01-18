@@ -6,6 +6,10 @@
     color: #05fcc8 !important;
 }
 
+.modal-dark {
+    color: #2d2d2d !important;
+}
+
 .noticeBoard {
     padding: 1%;
     background: #e0ff66;
@@ -14,10 +18,14 @@
     align-content: center;
 }
 
-.header, .presenceInfo{
+.header, .presenceInfo {
     margin: 2% 5%;
     text-align: center;
     align-content: center;
+}
+
+.addGameRow {
+    margin: 2% 5%;
 }
 
 .gameSelect, .control {
