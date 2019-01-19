@@ -5,7 +5,8 @@
   "description": "An electron application for Nintendo Switch users that allows them to update their game status via Discord Rich Presence.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --asar --overwrite"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "electron": "^4.0.1"
   },
   "devDependencies": {
+    "electron-packager": "^13.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
