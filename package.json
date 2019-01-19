@@ -6,7 +6,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --asar --overwrite"
+    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --asar --overwrite",
+    "build-linux": "electron-packager . SwitchRP --platform=linux --arch=ia32 --out=./dist --asar --overwrite"
   },
   "repository": {
     "type": "git",
