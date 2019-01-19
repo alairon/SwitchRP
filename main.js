@@ -4,8 +4,8 @@
  */
 
 /* Application Directories */
-const appDir = './app/';
-const appJSDir = './app/js/';
+const appDir = `${__dirname}/app/`;
+const appJSDir = `${__dirname}/app/js/`;
 
 /* File Directories */
 const indexDir = `${appDir}index.html`;

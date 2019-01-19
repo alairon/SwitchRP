@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const gameJSONFile = 'app/titles.json';
+const gameJSONFile = `${__dirname}/titles.json`;
 
 const fsErrMsg = document.getElementById('fsErrMsg');
 

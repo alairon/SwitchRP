@@ -10,7 +10,7 @@
 const { ipcRenderer } = require('electron');
 
 // File containing list of games
-const gameList = require('./titles.json');
+const gameList = require(`${__dirname}/titles.json`);
 
 /** IPC Renderer Function
  * Sends a signal to main.js to update the user's discord status
