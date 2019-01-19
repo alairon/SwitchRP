@@ -13,31 +13,80 @@
     <link rel="stylesheet" href="./fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="./fontawesome/css/solid.min.css">
     <link rel="stylesheet" href="./fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="./fontawesome/css/brands.min.css">
   </head>
   <body id="bodyMain" class="body-dark">
     <div class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="navbar-header justify-content-between">
           <span class="navbar-brand">Switch RP</span>
-          <span class="navbar-text">v0.5.4</span>
+          <span class="navbar-text">v0.7.1</span>
         </div>
         <div class="navbar-header">
-          <button class="btn btn-light" type="button" id="lightToggle" value="1" onclick="toggleScheme()"><i class="fas fa-lightbulb"></i></button>
-          <button class="btn btn-warning" type="button" id="noticesButton" value="0" onclick="readMail()"><i class="fas fa-envelope"></i></button>
-          <button class="btn btn-info" type="button" onclick="alert('Select a one title from the dropdown menu, then click on the Update Status button')"><i class="far fa-question-circle"></i></button>
+          <button class="btn btn-light" type="button" id="lightToggle" value="1" data-toggle="tooltip" data-placement="bottom" title="Toggle between light and dark modes" onclick="toggleScheme()"><i class="fas fa-lightbulb"></i></button>
+          <button class="btn btn-warning" type="button" id="noticesButton" value="0" data-toggle="tooltip" data-placement="bottom" title="Read notices" onclick="readMail()"><i class="fas fa-envelope"></i></button>
+          <button class="btn btn-info" type="button" id="help" data-toggle="tooltip" data-placement="bottom" title="Help" onclick="alert('Select a one title from the dropdown menu, then click on the Update Status button')"><i class="far fa-question-circle"></i></button>
         </div>
       </div>
     </div>
     <div id="notices" class="noticeBoard" style="display:none">
-      <span id="buildInfo">This is an early development build. Custom entries are currently unavailable.</span>
+      <span id="buildInfo">This is an early development build. Some features may not work as intended.</span>
     </div>
 
     <!-- Game Selection -->
     <div class="gameSelect">
+      <!-- Dropdown of registered games -->
       <button class="btn btn-primary dropdown-toggle" type="button" id="titleName" value="" data-toggle="dropdown" arias-haspopup="true" aria-expanded="false">
-          <i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game
+        <i class="fas fa-gamepad"></i>&nbsp;&nbsp;Select your game
       </button>
       <div class="dropdown-menu" id="gameList">
+      </div>
+      <!-- Adding games to the list -->
+      <span data-toggle="modal" data-target="#addGameModal">
+        <button class="btn btn-primary" type="button" id="addGame" data-toggle="tooltip" data-placement="bottom" title="Add a game to the list" aria-selected="false" >
+          <i class="fas fa-plus"></i>
+        </button>
+      </span>
+      <div class="modal fade modal-dark" id="addGameModal" tabindex="-1" role="dialog" aria-labelledby="addGameModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="modal-title" id="addGameModalTitle">Add a Game Listing</span>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-auto text-warning">
+                    <i class="fas fa-exclamation-circle fa-2x"></i>
+                  </div>
+                  <div class="col">
+                      Visit the <a href="#"><i class="fab fa-discord"></i>&nbsp;Discord Developer Portal</a> if you require a client ID.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-row addGameRow">
+                  <input type="text" class="form-control" id="newGameName" placeholder="Game Name">
+                </div>
+                <div class="form-row addGameRow">
+                  <input type="text" class="form-control" id="newGameID" placeholder="Discord Client ID">
+                </div>
+                <div class="form-row addGameRow">
+                  <input type="text" class="form-control" id="newLargeImageKey" placeholder="Large Image Key">
+                </div>
+              </div>
+              <span class="text-danger" id="fsErrMsg">&nbsp;</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                <i class="fas fa-times"></i>&nbsp;&nbsp;Close
+              </button>
+              <button type="button" class="btn btn-success" onclick="submitJSON()">
+                <i class="fas fa-save"></i>&nbsp;&nbsp;Save
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -50,11 +99,11 @@
             <input type="text" class="form-control" id="gameName" placeholder="Game Name" disabled>
           </div>
           <div class="col">
-            <label for="gameID">Discord Application ID</label>
-            <input type="text" class="form-control" id="gameID" placeholder="Discord application ID" disabled>
+            <label for="gameID">Discord Client ID</label>
+            <input type="text" class="form-control" id="gameID" placeholder="Discord Client ID" disabled>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-row form-group">
           <div class="col">
             <label for="gameDetails">Game Details</label>
             <input type="text" class="form-control" id="gameDetails" placeholder="Describe what you're doing in-game (optional)">
@@ -65,10 +114,10 @@
 
     <!-- Control buttons  -->
     <div class="control">
-      <button type="button" id="reset-btn" class="btn btn-outline-light" onclick="resetValues()">
-        <i class="fas fa-undo-alt"></i>&nbsp;&nbsp;Reset Values
+      <button type="button" id="reset-btn" class="btn btn-outline-light" data-toggle="tooltip" data-placement="bottom" title="Restores the form to its initial state" aria-pressed="false" onclick="resetValues()">
+        <i class="fas fa-undo-alt"></i>&nbsp;&nbsp;Reset
       </button>
-      <button type="button" id="updateStatus" class="btn btn-success" data-toggle="false" aria-pressed="false">
+      <button type="button" id="updateStatus" class="btn btn-success" aria-pressed="false" disabled>
         <i class="fas fa-broadcast-tower"></i>&nbsp;&nbsp;Update Status
       </button>
     </div>
@@ -77,5 +126,6 @@
     <script src="./jquery/jquery-3.2.1.slim.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/addCustomGame.js"></script>
   </body>
 </html>

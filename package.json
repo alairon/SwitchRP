@@ -1,11 +1,12 @@
 {
   "name": "switchrp",
   "productName": "Switch RP",
-  "version": "0.5.4",
+  "version": "0.7.1",
   "description": "An electron application for Nintendo Switch users that allows them to update their game status via Discord Rich Presence.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --asar --overwrite"
   },
   "repository": {
     "type": "git",
@@ -25,12 +26,10 @@
   "homepage": "https://github.com/alairon/SwitchRP#readme",
   "dependencies": {
     "discord-rich-presence": "0.0.7",
-    "discord-rpc": "^3.0.1",
-    "discord.js": "^11.4.2",
     "electron": "^4.0.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
+    "electron-packager": "^13.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"

@@ -4,8 +4,8 @@
  */
 
 /* Application Directories */
-const appDir = './app/';
-const appJSDir = './app/js/';
+const appDir = `${__dirname}/app/`;
+const appJSDir = `${__dirname}/app/js/`;
 
 /* File Directories */
 const indexDir = `${appDir}index.html`;
@@ -27,8 +27,8 @@ function createLauncherWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    width: 800,
-    height: 600,
+    width: 720,
+    height: 520,
     resizable: true,
   });
 
@@ -37,9 +37,6 @@ function createLauncherWindow() {
 
   // Hide the menu bar
   mainWindow.setMenu(null);
-
-  // Show the Chrome development tools when launched
-  // mainWindow.toggleDevTools();
 
   mainWindow.on('closed', () => {
     mainWindow = null;

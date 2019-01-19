@@ -50,7 +50,7 @@ function updatePresenceInit() {
 updatePresenceInit();
 
 /* Process Functions */
-// Uncaught Rejection, in case of Discord Timeouts
+// Uncaught Rejection, in case of Discord failing to connect
 process.on('unhandledRejection', (reason) => {
   if (typeof (reason.context) !== typeof (undefined)) {
     console.log(`Error: ${reason.context.code}, ${reason.context.message}`);

@@ -6,26 +6,33 @@
     color: #05fcc8 !important;
 }
 
+.modal-dark {
+    color: #2d2d2d !important;
+}
+
 .noticeBoard {
-    padding: 1% 1% 1% 1%;
+    padding: 1%;
     background: #e0ff66;
     color: #000000;
     text-align: center;
     align-content: center;
 }
 
-.header, .gameSelect, .presenceInfo, .control {
-    margin: 2% 5% 2% 5%;
+.header, .presenceInfo {
+    margin: 2% 5%;
     text-align: center;
     align-content: center;
 }
 
-.footer {
-    background: #ebe2e2;
-    position: fixed;
-    align-content: center;
+.addGameRow {
+    margin: 2% 5%;
+}
+
+.gameSelect, .control {
+    margin: 4% 5% 2%;
     text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 2%;
+}
+
+input {
+    text-align: center;
 }
