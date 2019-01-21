@@ -4,8 +4,8 @@
 Switch RP (Rich Presence) is an electron application for that allows users to update their game status via Discord's Rich Presence. This application was created because I wanted to share with other Discord users when I was playing on my Switch, but wanted an easier way to update my status apart from going into the settings every time.
 
 ![Switch RP main screen](./docs/readme/img/mainScreen.PNG)
-
-_Image of the main screen as of v0.6.0_
+<br>
+_Image of the main screen as of v0.7.1_
 
 ## Prerequisites
 This application requires the desktop version of Discord. If you don't already have it installed, you can download a fresh copy from [Discord](https://discordapp.com/download).
@@ -21,19 +21,28 @@ Direct a terminal to the downloaded/cloned directory where `package.json` is loc
 
 Note: When installing the required packages, you may receive `WARN` messages from npm asking you to install peer dependencies. This application does not make use of those dependencies, and can be safely ignored.
 
-#### Running the Application
+## Running the Application
+### From Source
 After installing the required packages, type `npm start` into a terminal to start the program.
 
+### From Executable
+If you downloaded the precompiled executable from GitHub, uncompress the zip folder, then click on "SwitchRP.exe". <br>
+Note that this executable is not digitally signed. Depending on your computer's security configuration(s), you may be required to allow this program to run.
+
+## Using the Application
+Ensure that Discord is open in the background prior to opening the application.
+
+For more information, please refer to the (Wiki)[#] (Wiki placeholder -- it'll be set up soon)!
+
 ## Development Information
-As of v0.7.1, this application used the following packages:
+As of v0.7.1, this application used the following configuration:
 * `Node.js v11.2.0`
 * `npm v6.4.1`
-* `electron: 4.0.1`
-* `discord-rich-presence: 0.0.7`
+* `Electron: 4.0.1`
 
 ## Limitations
 ### Application
-This app doesn't allow users to create their own entries from within the application. In the meantime, users who have created a custom Discord Application ID may add their entry to the JSON.
+After adding a custom entry, the program does not immediately add the entry to the list. Restarting the application should resolve this issue.
 
 ### Discord
-A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be displayed immediately after pressing the "Update Status" button.
+A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be updated immediately after pressing the "Update Status" and "Disconnect" buttons.
