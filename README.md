@@ -51,7 +51,11 @@ As of v1.0.0, this application used the following configuration:
 ### Application
 After adding a custom entry, the program does not immediately add the entry to the list. Restarting the application should resolve this issue.
 
-Links appearing inside the application such as "Discord Developer Portal" are currently disabled as they open inside the main window instead of your browser of choice.
+Links appearing inside the application such as "Discord Developer Portal" (shown below) are currently disabled as they open inside the main window instead of your browser of choice.
+
+![Link issue](./docs/readme/img/KnownIssue2.png)
+<br>
+_Example of a disabled link_
 
 ### Discord
 A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be updated immediately after pressing the "Update Status" and "Disconnect" buttons.
