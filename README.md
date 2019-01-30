@@ -5,7 +5,7 @@ Switch RP (Rich Presence) is an electron application for that allows users to up
 
 ![Switch RP main screen](./docs/readme/img/mainScreen.PNG)
 <br>
-_Image of the main screen as of v0.7.1_
+_Image of the main screen as of v1.0.0_
 
 ## Prerequisites
 This application requires the desktop version of Discord. If you don't already have it installed, you can download a fresh copy from [Discord](https://discordapp.com/download).
@@ -32,17 +32,19 @@ Note that this executable is not digitally signed. Depending on your computer's 
 ## Using the Application
 Ensure that Discord is open in the background prior to opening the application.
 
-For more information, please refer to the (Wiki)[#] (Wiki placeholder -- it'll be set up soon)!
+For more information, please refer to the [Wiki](https://github.com/alairon/SwitchRP/wiki).
 
 ## Development Information
-As of v0.7.1, this application used the following configuration:
+As of v1.0.0, this application used the following configuration:
 * `Node.js v11.2.0`
 * `npm v6.4.1`
-* `Electron: 4.0.1`
+* `Electron: 4.0.3`
 
 ## Limitations
 ### Application
 After adding a custom entry, the program does not immediately add the entry to the list. Restarting the application should resolve this issue.
+
+Links appearing inside the application such as "Discord Developer Portal" are currently disabled as they open inside the main window instead of your browser of choice.
 
 ### Discord
 A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be updated immediately after pressing the "Update Status" and "Disconnect" buttons.
