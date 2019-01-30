@@ -21,6 +21,13 @@ Direct a terminal to the downloaded/cloned directory where `package.json` is loc
 
 Note: When installing the required packages, you may receive `WARN` messages from npm asking you to install peer dependencies. This application does not make use of those dependencies, and can be safely ignored.
 
+#### Building from Source
+If you would like to create an executable without the need of a terminal, type `npm run build-<arch>` into the terminal, replacing `<arch>` with:
+* `win32` for Windows
+* `linux` for Linux
+
+The compiled files will be placed in the `dist` folder, where you can then freely move the contents elsewhere.
+
 ## Running the Application
 ### From Source
 After installing the required packages, type `npm start` into a terminal to start the program.
