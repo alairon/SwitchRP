@@ -6,8 +6,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --asar --overwrite",
-    "build-linux": "electron-packager . SwitchRP --platform=linux --arch=ia32 --out=./dist --asar --overwrite"
+    "build-win32": "electron-packager . SwitchRP --platform=win32 --arch=ia32 --out=./dist --overwrite",
+    "build-linux": "electron-packager . SwitchRP --platform=linux --arch=ia32 --out=./dist --overwrite"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,12 @@
   "homepage": "https://github.com/alairon/SwitchRP#readme",
   "dependencies": {
     "discord-rich-presence": "0.0.7",
-    "electron": "^4.0.1"
+    "electron": "^4.0.3"
   },
   "devDependencies": {
     "electron-packager": "^13.0.1",
-    "eslint": "^5.12.0",
+    "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.16.0"
   }
 }
