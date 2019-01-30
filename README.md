@@ -33,7 +33,7 @@ The compiled files will be placed in the `dist` folder, where you can then freel
 After installing the required packages, type `npm start` into a terminal to start the program.
 
 ### From Executable
-If you downloaded the precompiled executable from GitHub, uncompress the zip folder, then click on "SwitchRP.exe". <br>
+If you downloaded the [precompiled executable from GitHub](https://github.com/alairon/SwitchRP/releases), uncompress the zip folder, then click on "SwitchRP.exe". <br>
 Note that this executable is not digitally signed. Depending on your computer's security configuration(s), you may be required to allow this program to run.
 
 ## Using the Application
