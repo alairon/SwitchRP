@@ -51,7 +51,7 @@ As of v1.0.0, this application used the following configuration:
 ### Application
 After adding a custom entry, the program does not immediately add the entry to the list. Restarting the application should resolve this issue.
 
-Links appearing inside the application such as "Discord Developer Portal" (shown below) are currently disabled as they open inside the main window instead of your browser of choice.
+Links appearing inside the application such as "[Discord Developer Portal](https://discordapp.com/developers/applications/)" (shown below) are currently disabled as they open inside the main window instead of your browser of choice.
 
 ![Link issue](./docs/readme/img/KnownIssue2.png)
 <br>
