@@ -30,9 +30,9 @@
     "electron": "^4.0.3"
   },
   "devDependencies": {
-    "electron-packager": "^13.0.1",
-    "eslint": "^5.12.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "electron-packager": "^13.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }
