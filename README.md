@@ -42,10 +42,15 @@ Ensure that Discord is open in the background prior to opening the application.
 For more information, please refer to the [Wiki](https://github.com/alairon/SwitchRP/wiki).
 
 ## Development Information
-As of v1.0.0, this application used the following configuration:
+Builds of v1.0.0 and earlier used the following configuration:
 * `Node.js v11.2.0`
 * `npm v6.4.1`
-* `Electron: 4.0.3`
+* `Electron 4.0.3`
+
+Builds with v1.0.1 and later uses the following configuration:
+* `Node.js v12.13.0`
+* `npm v6.12.0`
+* `Electron v7.1.2`
 
 ## Limitations
 ### Application
