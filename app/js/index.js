@@ -5,11 +5,12 @@
 
 /* eslint no-unused-vars: 0 */
 /* eslint import/no-unresolved: 0 */
+/* eslint import/no-dynamic-require: 0 */
 
 // IPC Renderer
 const { ipcRenderer } = require('electron');
 
-// File containing list of games
+// File containing list of game titles
 const gameList = require(`${__dirname}/titles.json`);
 
 /** IPC Renderer Function

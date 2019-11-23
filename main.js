@@ -13,13 +13,18 @@ const configDir = `${appDir}gameConfig.html`;
 const discordDir = `${appJSDir}discordConnect.js`;
 
 /* Electron */
-const { app, BrowserWindow, ipcMain } = require('electron');
+const {
+  app, BrowserWindow, Menu, ipcMain,
+} = require('electron');
 
 /* Child Processes */
 const exec = require('child_process');
 
 /* Global Electron Window Values */
 let mainWindow = null;
+
+/* Remove menu bars */
+Menu.setApplicationMenu(null);
 
 /* Main Window */
 function createLauncherWindow() {
@@ -34,9 +39,6 @@ function createLauncherWindow() {
 
   // Load the main page
   mainWindow.loadFile(indexDir);
-
-  // Hide the menu bar
-  mainWindow.setMenu(null);
 
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -83,9 +85,6 @@ function statusWindow(clientAppID, details, largeImageKey) {
   discordWindow.loadFile(configDir);
 
   const discordProcess = exec.fork(discordDir, [clientAppID, details, largeImageKey]);
-
-  // Hide the menu bar
-  discordWindow.setMenu(null);
 
   // Restore control to the main window when closed
   discordWindow.on('closed', () => {

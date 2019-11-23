@@ -35,12 +35,14 @@ function updatePresenceInit() {
   if (!checkDetails(appPresence.details)) {
     // No details set
     client.updatePresence({
+      startTimestamp: Date.now(),
       largeImageKey: appPresence.largeImageKey,
     });
   } else {
     // Details is set
     client.updatePresence({
       details: appPresence.details,
+      startTimestamp: Date.now(),
       largeImageKey: appPresence.largeImageKey,
     });
   }
