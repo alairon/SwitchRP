@@ -27,7 +27,7 @@
   "homepage": "https://github.com/alairon/SwitchRP#readme",
   "dependencies": {
     "discord-rich-presence": "0.0.7",
-    "electron": "^4.0.3"
+    "electron": "^4.2.12"
   },
   "devDependencies": {
     "electron-packager": "^13.1.1",
