@@ -18,8 +18,10 @@ function removeSymbols(longName) {
 function writeToJSON(newGameObj) {
   const gameJSON = fs.readFileSync(gameJSONFile);
   const updatedJSON = JSON.parse(gameJSON);
+  const newGameObjKey = removeSymbols(newGameObj.longName);
 
-  updatedJSON[removeSymbols(newGameObj.longName)] = newGameObj;
+  /* Add a JSON object with the contents of newGameObj */
+  updatedJSON[newGameObjKey] = newGameObj;
 
   fs.writeFile(gameJSONFile, JSON.stringify(updatedJSON, null, 2), (errException) => {
     if (errException !== null) {
@@ -31,6 +33,15 @@ function writeToJSON(newGameObj) {
       fsErrMsg.classList.remove('text-danger');
       fsErrMsg.classList.add('text-success');
       fsErrMsg.innerHTML = (`Successfully added "${newGameObj.longName}"`);
+
+      const newObj = document.createElement('button');
+      newObj.setAttribute('class', 'dropdown-item');
+      newObj.setAttribute('type', 'button');
+      newObj.setAttribute('onclick', `setTitle("${newGameObjKey}")`);
+      newObj.setAttribute('value', newGameObjKey);
+      newObj.innerHTML = newGameObj.longName;
+      document.getElementById('gameList').appendChild(newObj);
+      gameList.push(newObj);
     }
   });
 }
