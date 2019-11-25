@@ -41,7 +41,6 @@ function writeToJSON(newGameObj) {
       newObj.setAttribute('value', newGameObjKey);
       newObj.innerHTML = newGameObj.longName;
       document.getElementById('gameList').appendChild(newObj);
-      gameList.push(newObj);
     }
   });
 }
