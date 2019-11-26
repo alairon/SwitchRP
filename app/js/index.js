@@ -112,6 +112,9 @@ function launchDiscordDevLink() {
   shell.openExternal('https://discordapp.com/developers/');
 }
 
+/** reloadList
+ * Applies changes to the titles.json file by reloading the file.
+ */
 function reloadList() {
   gameList = reload(`${__dirname}/titles.json`);
 }
@@ -125,6 +128,9 @@ $(() => {
   });
 });
 
+/** Action after hiding the modal
+ * Upon closing the "Add Game" modal, calls on reloadList to reload the file.
+ */
 $('#addGameModal').on('hidden.bs.modal', () => {
   reloadList();
 });
