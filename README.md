@@ -42,20 +42,16 @@ Ensure that Discord is open in the background prior to opening the application.
 For more information, please refer to the [Wiki](https://github.com/alairon/SwitchRP/wiki).
 
 ## Development Information
-As of v1.0.0, this application used the following configuration:
-* `Node.js v11.2.0`
-* `npm v6.4.1`
-* `Electron: 4.0.3`
+Builds of v1.0.0 and earlier used the following configuration:
+* Node.js v11.2.0
+* npm v6.4.1
+* Electron 4.0.3
+
+Builds with v1.0.1 and later uses the following configuration:
+* Node.js v12.13.0
+* npm v6.12.0
+* Electron v7.1.2
 
 ## Limitations
-### Application
-After adding a custom entry, the program does not immediately add the entry to the list. Restarting the application should resolve this issue.
-
-Links appearing inside the application such as "[Discord Developer Portal](https://discordapp.com/developers/applications/)" (shown below) are currently disabled as they open inside the main window instead of your browser of choice.
-
-![Link issue](./docs/readme/img/KnownIssue2.png)
-<br>
-_Example of a disabled link_
-
 ### Discord
 A limitation from Discord only allows users to update their status once every 15 seconds. Your status may not be updated immediately after pressing the "Update Status" and "Disconnect" buttons.
