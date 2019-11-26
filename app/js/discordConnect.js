@@ -2,7 +2,9 @@
  * Functions used to update the user's status
  * For info on creating application IDs, visit
  * https://discordapp.com/developers/applications/
-*/
+ */
+
+/* eslint no-console: 0 */
 
 // Converts a number type into a string, if necessary
 function checkAppID(appID) {

@@ -8,10 +8,12 @@
 /* eslint import/no-dynamic-require: 0 */
 
 // IPC Renderer
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 
 // File containing list of game titles
-const gameList = require(`${__dirname}/titles.json`);
+let gameList = require(`${__dirname}/titles.json`);
+
+const reload = require('require-reload')(require);
 
 /** IPC Renderer Function
  * Sends a signal to main.js to update the user's discord status
@@ -103,11 +105,32 @@ function resetValues() {
   document.getElementById('updateStatus').disabled = true;
 }
 
+/** launchDiscordDevLink
+ * Uses the user's default browser to open up Discord's Developers page.
+ */
+function launchDiscordDevLink() {
+  shell.openExternal('https://discordapp.com/developers/');
+}
+
+/** reloadList
+ * Applies changes to the titles.json file by reloading the file.
+ */
+function reloadList() {
+  gameList = reload(`${__dirname}/titles.json`);
+}
+
 /** Tooltips
  * Activates Bootstrap tooltips
- */
+*/
 $(() => {
   $('[data-toggle="tooltip"]').tooltip({
     trigger: 'hover',
   });
+});
+
+/** Action after hiding the modal
+ * Upon closing the "Add Game" modal, calls on reloadList to reload the file.
+ */
+$('#addGameModal').on('hidden.bs.modal', () => {
+  reloadList();
 });
